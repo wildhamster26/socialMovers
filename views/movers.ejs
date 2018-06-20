@@ -2,6 +2,8 @@
 
 <h1>Mover's list page</h1>
 
+<a href="/movers/new">Add a mover</a>
+
 <ol>
 <% movers.forEach(function(mover){ %>
 		<div>
@@ -11,8 +13,11 @@
 <% }); %>
 </ol>
 
-
+<div>
 <a href="/">Home</a>
+</div>
+<div>
 <a href="/help">Help needed</a>
+</div>
 
 <% include partials/footer %>
