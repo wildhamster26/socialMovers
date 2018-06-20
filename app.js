@@ -1,6 +1,9 @@
 var express = require("express");
 var app = express();
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
@@ -19,6 +22,10 @@ app.get("/movers", function(req, res) {
 	];
 
 	res.render("movers", {movers: movers});
+});
+
+app.post("/movers", function(req, res) {
+	res.send("You've hit the movers post route");
 });
 
 app.get("/help", function(req, res) {
@@ -45,6 +52,10 @@ app.get("/help", function(req, res) {
 	];
 
 	res.render("help", {socialWorkers: socialWorkers});
+});
+
+app.post("/help", function(req, res) {
+	res.send("You've hit the help wanted post route");
 });
 
 
