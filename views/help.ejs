@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<h1>Required help - moving list page</h1>
+
+<ol>
+<% socialWorkers.forEach(function(socialWorker){ %>
+		<div>
+			<li><%=socialWorker.name %>
+			<%= socialWorker.phoneNumber %>
+			<%= socialWorker.item %>
+			<%= socialWorker.from %>
+			<%= socialWorker.to %>
+			<%= socialWorker.when %>
+			</li>
+		</div>
+<% }); %>
+</ol>
+
+
+<a href="/">Home</a>
+<a href="/movers">View All Movers</a>
+
+<% include partials/footer %>
