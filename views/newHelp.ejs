@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<h1>Add a required move:</h1>
+<form action="/help" method="POST">
+	<input type="text" name="name" placeholder="Social worker's name">
+	<input type="text" name="phoneNumber" placeholder="Social worker's phone number">
+	<input type="text" name="item" placeholder="What item needs to be moved?">
+	<input type="text" name="from" placeholder="From where?">
+	<input type="text" name="to" placeholder="Where to?">
+	<input type="text" name="when" placeholder="When at the latest can the move be executed?">
+	<button>Submit</button>
+</form>
+
+<% include partials/footer %>
