@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+<h1>Add a mover to our database:</h1>
+<form action="/movers" method="POST">
+	<input type="text" name="name" placeholder="Mover's name">
+	<input type="text" name="phoneNumber" placeholder="Mover's phone number">
+	<button>Submit</button>
+</form>
+
+<% include partials/footer %>

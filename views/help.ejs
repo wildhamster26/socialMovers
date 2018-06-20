@@ -3,14 +3,14 @@
 <h1>Required help - moving list page</h1>
 
 <ol>
-<% socialWorkers.forEach(function(socialWorker){ %>
+<% helpers.forEach(function(helper){ %>
 		<div>
-			<li><%=socialWorker.name %>
-			<%= socialWorker.phoneNumber %>
-			<%= socialWorker.item %>
-			<%= socialWorker.from %>
-			<%= socialWorker.to %>
-			<%= socialWorker.when %>
+			<li><%=helper.name %>
+			<%= helper.phoneNumber %>
+			<%= helper.item %>
+			<%= helper.from %>
+			<%= helper.to %>
+			<%= helper.when %>
 			</li>
 		</div>
 <% }); %>

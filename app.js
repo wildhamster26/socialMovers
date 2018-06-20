@@ -6,13 +6,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
 
-app.get("/", function(req, res) {
-	res.render("home");
-});
-
-app.get("/movers", function(req, res) {
-
-	let movers = [
+let movers = [
 	{name: "Dan",
 	 phoneNumber: "05451234567"},
 	 {name: "Marie",
@@ -21,16 +15,7 @@ app.get("/movers", function(req, res) {
 	 phoneNumber: "05451234567"}
 	];
 
-	res.render("movers", {movers: movers});
-});
-
-app.post("/movers", function(req, res) {
-	res.send("You've hit the movers post route");
-});
-
-app.get("/help", function(req, res) {
-
-	let socialWorkers = [
+let helpers = [
 	{name: "Jenny",
 	 phoneNumber: "05451234567",
 	 item: "closet",
@@ -51,11 +36,46 @@ app.get("/help", function(req, res) {
 	 when: "ASAP"}
 	];
 
-	res.render("help", {socialWorkers: socialWorkers});
+app.get("/", function(req, res) {
+	res.render("home");
+});
+
+app.get("/movers", function(req, res) {
+	res.render("movers", {movers: movers});
+});
+
+app.get("/movers/new", function(req, res){
+	res.render("newMovers");
+});
+
+app.post("/movers", function(req, res) {
+	let name = req.body.name;
+	let phoneNumber = req.body.phoneNumber;
+	let newMover = {name: name, phoneNumber: phoneNumber};
+	movers.push(newMover);
+
+	res.render("movers", {movers: movers});
+});
+
+app.get("/help", function(req, res) {
+	res.render("help", {helpers: helpers});
+});
+
+app.get("/help/new", function(req, res){
+	res.render("newHelp");
 });
 
 app.post("/help", function(req, res) {
-	res.send("You've hit the help wanted post route");
+	let name = req.body.name;
+	let phoneNumber = req.body.phoneNumber;
+	let item = req.body.item;
+	let from = req.body.from;
+	let to = req.body.to;
+	let when = req.body.when;
+	let newHelp = {name: name, phoneNumber: phoneNumber, item: item, from: from, to: to, when: when};
+	helpers.push(newHelp);
+
+	res.render("help", {helpers: helpers});
 });
 
 
