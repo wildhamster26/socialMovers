@@ -1,0 +1,13 @@
+<h1>Mover's list page</h1>
+
+<ol>
+<% movers.forEach(function(mover){ %>
+		<div>
+			<li><%=mover.name %>
+			<%=mover.phoneNumber %></li>
+		</div>
+<% }); %>
+</ol>
+
+
+<a href="/">Home</a>
