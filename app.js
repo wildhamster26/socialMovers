@@ -12,6 +12,24 @@ let movers = [
 	 {name: "Marie",
 	 phoneNumber: "05451234567"},
 	 {name: "Jack",
+	 phoneNumber: "05451234567"},
+	 {name: "Dan",
+	 phoneNumber: "05451234567"},
+	 {name: "Marie",
+	 phoneNumber: "05451234567"},
+	 {name: "Jack",
+	 phoneNumber: "05451234567"},
+	 {name: "Dan",
+	 phoneNumber: "05451234567"},
+	 {name: "Marie",
+	 phoneNumber: "05451234567"},
+	 {name: "Jack",
+	 phoneNumber: "05451234567"},
+	 {name: "Dan",
+	 phoneNumber: "05451234567"},
+	 {name: "Marie",
+	 phoneNumber: "05451234567"},
+	 {name: "Jack",
 	 phoneNumber: "05451234567"}
 	];
 
@@ -37,7 +55,7 @@ let helpers = [
 	];
 
 app.get("/", function(req, res) {
-	res.render("home");
+	res.render("home", {movers: movers});
 });
 
 app.get("/movers", function(req, res) {
