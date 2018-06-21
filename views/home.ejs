@@ -1,19 +1,23 @@
 <% include partials/header %>
 
-<h1>Welcome to the social movers site</h1>
+<div class="container">
+	<header class="jumbotron">
 
-<ol>
-	<li>Mover 1</li>
-	<li>Mover 2</li>
-	<li>Mover 3</li>
-	<li>Mover 4</li>
-	<li>Mover 5</li>
-</ol>
+			<h1>Welcome to the social movers site!</h1>
+			<p> Lorem ipsum dolor samit</p>
 
-<div>
-<a href="/movers">View All Movers</a>
+	</header>
+
+	<h2>Our top 5 social movers:</h2>
+	<ol>
+		<% for(let i = 0; i < 5; i++) { %>
+		<li> <%= movers[i].name %>
+			 <%= movers[i].phoneNumber %> </li>
+		<% } %>
+	</ol>
+
 </div>
-<div>
-<a href="/help">Help needed</a>
-</div>
+
 <% include partials/footer %>
+
+
