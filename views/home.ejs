@@ -10,9 +10,16 @@
 
 	<h2>Our top 5 social movers:</h2>
 	<ol>
-		<% for(let i = 0; i < 5; i++) { %>
-		<li> <%= movers[i].name %>
-			 <%= movers[i].phoneNumber %> </li>
+		<% if (movers.length >= 5){ %>
+			<% for(let i = 0; i < 5; i++) { %>
+			<li> <%= movers[i].name %>
+				 <%= movers[i].phoneNumber %> </li>
+			<% } %>
+		<% } else { %>
+			<% for(let i = 0; i < movers.length; i++) { %>
+			<li> <%= movers[i].name %>
+				 <%= movers[i].phoneNumber %> </li>
+			<% } %>
 		<% } %>
 	</ol>
 
