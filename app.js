@@ -53,7 +53,7 @@ app.get("/", function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render("home", {movers: movers});
+			res.render("index", {movers: movers});
 		}
 	});
 });
