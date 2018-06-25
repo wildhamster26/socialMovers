@@ -1,19 +1,12 @@
 let express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),    
-    mongoose = require("mongoose");
+    mongoose = require("mongoose"),
+    Mover = require("./models/movers.js");
 
 mongoose.connect("mongodb://localhost/movers");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-//MOVER SCHEMA SETUP
-let moverSchema = new mongoose.Schema({
-	name: String,
-	phoneNumber: String
-});
-
-let Mover = mongoose.model("Mover", moverSchema);
 
 // Mover.create({
 // 		name: "John",
