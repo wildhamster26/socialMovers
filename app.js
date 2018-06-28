@@ -1,12 +1,13 @@
-let express = require("express"),
-    app = express(),
+let express    = require("express"),
+    app        = express(),
     bodyParser = require("body-parser"),    
-    mongoose = require("mongoose"),
-    Mover = require("./models/movers.js");
+    mongoose   = require("mongoose"),
+    Mover      = require("./models/movers.js");
 
 mongoose.connect("mongodb://localhost/movers");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"))
 
 // Mover.create({
 // 		name: "John",
