@@ -2,6 +2,7 @@ let express    = require("express"),
     app        = express(),
     bodyParser = require("body-parser"),    
     mongoose   = require("mongoose"),
+    User       = require("./models/user.js"),
     Mover      = require("./models/movers.js");
 
 mongoose.connect("mongodb://localhost/movers");
